@@ -1,0 +1,2 @@
+git tag -l --- lists all the tags in the branch 
+git tag -d 'tagname' -- to delete a tag 
