@@ -1,2 +1,3 @@
 git tag -l --- lists all the tags in the branch 
 git tag -d 'tagname' -- to delete a tag 
+git push origin --tags  --- to push all the tags to origin after creating locally 
