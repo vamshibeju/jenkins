@@ -1,15 +1,44 @@
 Good testing involves many different types of tests:
-
 Unit testing, integration testing, smoke testing
-
 Functional testing
-
 Non-regression testing
-
 Acceptance testing
-
 Code Quality and Static Analysis
-
 Performance and Security Testing
-
 Report test results
+
+AUTOMATED TESTING
+Tests can be run frequently
+Tests should be independent from each other as much as possible
+Tests can be run in parallel
+Tests can be run in the same order
+Consume machine resources but little human time except to review
+the results of tests that fail
+Running tests frequently means that problems are found early
+and you usually know what small piece of code caused the problem
+Define different tests to run at different stages of the build chain
+
+TYPES OF TESTING — FASTER
+Unit tests — test a small piece of code (a function or method or command)
+Run blazingly fast, and are often written by the person who wrote the code
+Integration tests — validate integration between multiple sub-systems
+Including external sub-systems like a database
+Smoke tests — validates basic functions of the system
+Also known as sanity checking
+
+TYPES OF TESTING — SLOWER
+Functional tests — validate the normal software behaviors against
+the expectations and requirements
+Non-regression tests — validates that the system still produces
+the same result
+Acceptance tests — tests the full product from the perspective of
+the end-user use cases and feelings. Probably includes manual testing
+
+MANUAL TESTING
+Is appropriate when test result is subjective, such as user experience testing
+May also be used when the cost of automation is excessive for some reason
+Should be performed rarely, and only on software that has passed all automated tests
+TESTING PYRAMID
+Tests at the bottom of the pyramid run quickly and inexpensively and should be run very frequently
+Tests at the top of the pyramid take more time to run and are expensive; they should be run less frequently and only on software that has passed the tests lower on the pyramid.
+test pyramid
