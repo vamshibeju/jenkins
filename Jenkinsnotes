@@ -1,0 +1,26 @@
+Master
+------
+Computer or vm where Jenkins is installed 
+Serves request and handles build tasks
+Agent 
+-----
+Executes task which are directed by master
+Executors 
+---------
+Performs operations on Jenkins master or agent 
+Computational resource for running builds 
+BEST Practices for Jenkins 
+-----------------------------
+1.	Running builds on Jenkins master is not advisable as it increases load on the master and has risk for high security vulnerabilities.
+2.	It is advisable to use agents for running the builds as it decreases the load on the master 
+3.	WHEN TO USE TWO PIPELINES
+•	Use two Pipelines if you want them to be able to operate independently, such as when
+one part runs much less frequently;
+	Example One:
+o	One Pipeline to build, test and stage the software
+o	A second Pipeline that runs the release flow
+	Example Two:
+o	One Pipeline that runs the main build, test, stage and deployment steps
+o	A second Pipeline that does infrequent maintenance tasks such as
+re-indexing a database.
+
