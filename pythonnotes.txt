@@ -1,0 +1,51 @@
+1)to convert dictionary to json use// to update the json file 
+import json 
+json.dump(d,filename,indent='')
+d- it is the base value
+filename- to store the base value to the outputvalue
+indent - space after the bracket 
+
+2)to convert json to dictionaty//to load a json file and use and convert to dictionary
+import json 
+json.load(filename)
+
+3)file.seek(0)-- to move the cursor to the starting of the file
+
+4)enumerate(a)  creates an enumerate object which yields pairs of indexes and items.
+ Then we iterate through that object 
+print out the item-index pairs in each iteration together with some other strings.
+===>>In an enumerate the first value is index and the second is the value
+
+5)The sleep  method of the built-in time module suspends 
+the execution of the script for the given number of seconds. usage:import time time.sleep()
+
+6)LIST
+-- INSERT is used to modify the index value but it will not create a new list and we 
+can change the value on the index value of the list with INSERT
+-- POP is used to remove from the list -- list.pop()
+--clear is used to completely remove from the list -- list.clear()
+--index is used to get the value from the index -- list.index()
+-- count is used to get the count of a value from the index -- list.count()
+-- sort is used to sort the elements inside the list // sorted(list) it also sorts the list but create
+a new array
+-- join is used for the strings 
+ex: sentence =''
+     new_sentence= sentence.join(['hi','how'])
+
+7)DICTIONARY
+-- the keys of a dictionary should be immutable and in the dictionary it should be unique
+
+8)TUPLE
+-It has only 2 methods count and index
+
+9)SET
+-- It cannot take the duplicate values 
+set={1,2,3}
+methods for sets: 
+difference()--- shows the difference b/w 2 sets x.difference(y)
+discard() x.discard(value)
+difference_update-- it removes the difference from the set
+intersection()
+issubset() - if x is inside y then x.subset(y) = true
+issuperset() 
+isdisjoint()
