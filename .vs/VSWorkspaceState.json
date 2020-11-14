@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Jenkins",
+    "\\Terraform and cloud"
   ],
-  "SelectedNode": "\\sonarqube.docx",
+  "SelectedNode": "\\Jenkins",
   "PreviewInSolutionExplorer": false
 }

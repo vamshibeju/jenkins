@@ -1,0 +1,10 @@
+1)Github -- participating in the open source projects.
+
+2)Website -- create your own website to explore your skills and present in the interview with 
+		your skills linkedin profiles and add about me with the details
+	       Creating the websites by using the below templates 
+	        --creative-tim 
+	        -- mashup-template
+3)1-2 big projects -- experience 
+
+4)Blog 
