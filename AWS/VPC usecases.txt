@@ -1,0 +1,11 @@
+VPC usecases
+
+1)Create 2 instances in the same vpc and add the routes of the ip address in there routetables 
+so that they can ping each other via private ip.
+2)Create 2 instances one in private and other in public and for private dont attach the internet
+gateway so that the instance in private subnet can access internet via instance in public 
+or we can create a nat gatewat so that it can access the internet.
+
+
+3)To connect one server in one vpc to another server in another vpc we need to create peer connection 
+.
