@@ -1,0 +1,5 @@
+smoketest - checks the functionality of the main function 
+
+unit test - check the single functionality 
+
+regression test - testing the code again after adding the new code 
