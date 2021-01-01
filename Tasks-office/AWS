@@ -1,0 +1,37 @@
+=>place the codecommit with github code and upload to s3 through jenkins and aws pipeline should be triggered making s3 as source
+
+	setup 
+	------
+	1)github - maven code 
+	2)Create a jenkins job to upload the code to s3 bucket in aws
+	3)Validate the content of s3 bucket 
+	4)Create a pipeline in aws by making s3 bucket as source 
+	5)upload the content of s3 into the artifactory 
+
+
+=>Explore aws pipeline 
+ 1)create a pipeline job in aws by using the below:
+	codecommit
+	codebuild
+	codeartifact
+	codedeploy 
+	codepipeline
+	
+=>Jenkins CI/CD setup by using aritfactory and sonarqube with maven  - 1/1/2021
+
+
+Explore the below services in aws 
+
+	Databases
+	1)Aurora 
+	2)Dynamodb
+	3)Redshift 
+	4)Elasticcache
+	
+	5)Cognito
+	6)cloudwatch
+	
+1)what is databricks used for? 1/1/2021
+2)What is sharedaccount and serverless account in aws? - 1/1/2021
+
+
