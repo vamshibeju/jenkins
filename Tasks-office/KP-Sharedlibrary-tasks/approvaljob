@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    stages{
+        stage(firststage){
+            steps{
+                echo "hello world"
+            }
+        }
+        stage(secondstage){
+            steps{
+                script{
+			try{
+				def userInput= input(id: 'proceed1', message: 'promote step?', parameters:[[$class: 'BooleanParameterDefinition',defaultValue: true ,name:'deploy to secondstage']])
+                echo 'userInput: ' + userInput
+			 if (userInput== true){
+				echo "action provided"
+				echo "deployed succesfully"
+                }
+                }
+            catch(Exception err){
+					currentBuild.result = 'ABORTED'
+						echo('ABORTED ERROR')
+						
+						// return here instead of throwing error to keep the build "green"
+						return;
+				  }
+				  
+                }
+				 }
+				 
+        }
+    }
+}

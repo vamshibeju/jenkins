@@ -1,0 +1,77 @@
+pipeline{
+    agent any 
+    stages{
+        stage('gitcheckout'){
+            steps{
+                echo "${env.STAGE_NAME}"
+				git url:"https://github.com/jleetutorial/maven-project.git"
+            }
+            
+        }
+		 stage("mvnbuild"){
+            steps{
+			script{
+                echo "${env.STAGE_NAME}"
+				sh 'mvn clean install'
+            }
+			}
+        }
+        stage("unittests"){
+           steps{
+		   script{
+                echo "${env.STAGE_NAME}"
+				sh 'mvn test'
+            }
+			}
+        }
+         stage("deploytoqa"){
+           steps{
+                echo "${env.STAGE_NAME}"
+				echo "no deployment to qa"
+            }
+        }
+         stage("approvalfromqa"){
+            steps{
+			script{
+                echo "${env.STAGE_NAME}"
+				//def userInput= input(id: 'proceed1', message: 'promote step?', parameters:[[$class: 'BooleanParameterDefinition',defaultValue: true ,name:'approved']])
+				}
+            }
+        }
+       
+         stage("automateduitests"){
+           steps{
+                echo "${env.STAGE_NAME}"
+            }
+        }
+        stage("deploytoproduction"){
+            steps{
+                echo "${env.STAGE_NAME}"
+            }
+        }
+		stage("uploadingtos3"){
+           steps{
+                echo "${env.STAGE_NAME}"
+				s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'jenkins-s3-webapp', excludedFile: 'jobs/', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: true, noUploadOnFailure: true, selectedRegion: 'us-west-2', showDirectlyInBrowser: false, sourceFile: 'webapp/target/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'jenkins', userMetadata: []
+            }
+        }
+        stage("sanityhealthcheck"){
+           steps{
+               script{
+                echo "${env.STAGE_NAME}"
+				def url = "https://jenkins-s3-webapp.s3-us-west-2.amazonaws.com/jobs/fuzzy_telegram/${BUILD_NUMBER}/webapp.war"
+				int status = sh(script: "curl -sLI -w '%{http_code}' $url -o /dev/null", returnStdout: true)
+                if (status == 200 || status == 201) {
+                   echo "webapp.war file uploaded successfully"
+                }else{
+                    
+                    error("Returned status code = $status when calling $url")
+                }
+				
+               }
+                   
+               }
+        }
+        
+    }
+}

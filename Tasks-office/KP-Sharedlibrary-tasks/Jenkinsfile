@@ -1,0 +1,33 @@
+pipeline{
+  agent any
+stages{
+  //stage(gitcheckout){
+   
+//steps{
+ 
+//echo "checkingout from git"
+ //}
+  //}
+stage(sonarqube){
+steps{
+  //validate
+echo "sonarqube job"
+  
+  
+}
+}
+  
+ stage(validatingstages){
+ steps{
+  
+   script{
+          file = load("validatingjenkinsnew.groovy")
+          
+   }
+     
+  
+    }
+  }
+}
+}
+  
