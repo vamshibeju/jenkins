@@ -8,7 +8,6 @@
 	4)Create a pipeline in aws by making s3 bucket as source 
 	5)upload the content of s3 into the artifactory 
 
-
 =>Explore aws pipeline 
  1)create a pipeline job in aws by using the below:
 	codecommit
@@ -17,21 +16,39 @@
 	codedeploy 
 	codepipeline
 	
+	
+	
+	
+	
 =>Jenkins CI/CD setup by using aritfactory and sonarqube with maven  - 1/1/2021
+	JENKINS SETUP -- DONE 
+	ARTIFACTORY SETUP -- DONE 
+	sonarqube setup -- pending 
+	git - jenkins - sonarqube - artifactory - pending
+	git - jenkins  - artifactory - DONE 
+	
+	sonarqube integration with jenkins - pending
 
-
+	=>create a jenkinsfile with the above setup  - DONE (80%)
+	
 Explore the below services in aws 
 
 	Databases
-	1)Aurora 
-	2)Dynamodb
-	3)Redshift 
-	4)Elasticcache
+	1)Aurora             2/2/2021
+	2)Dynamodb 2/2/2021
+	3)Redshift  2/2/2021
+	4)Elasticcache 2/2/2021
+	5)Cognito 2/2/2021
+	6)cloudwatch  2/2/2021
+	7)cloudformation 2/2/2021
 	
-	5)Cognito
-	6)cloudwatch
-	
-1)what is databricks used for? 1/1/2021
-2)What is sharedaccount and serverless account in aws? - 1/1/2021
+1)what is databricks used for? 1/1/2021 - DONE
+A)DONE
+=>It was developed by apache spark 
+	Large-scale data processing for batch and streaming workloads.
+	Enable analytics on the most complete and recent data.
+	Simplify and accelerate data science on large datasets.
+	Standardize ML lifecycle from experimentation to production.
 
-
+2)What is sharedaccount and serverless account in aws? - 1/1/2021-DONE
+serverless account means we need to use the lambda functions.

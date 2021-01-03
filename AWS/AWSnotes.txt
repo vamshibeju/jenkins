@@ -1,0 +1,4 @@
+cloud former - To create the complete infra into a template we need to go to cloudformation and select cloud former 
+1)Ec2 instance will be launched 
+2) After the ec2 instance url we need to enter the resources we need to create in the template
+3) At last we will get a json file which contains all the resources in that file.
