@@ -10,13 +10,13 @@
 
 =>Explore aws pipeline 
  1)create a pipeline job in aws by using the below:
-	codecommit
-	codebuild
-	codeartifact
-	codedeploy 
-	codepipeline
+	codecommit - done
+	codebuild- done
+	codeartifact- done
+	codedeploy - done
+	codepipeline- done
 	
-	
+  2)implementeation of aws ci/cd pipeline in aws 
 	
 	
 	
@@ -36,11 +36,12 @@ Explore the below services in aws
 	Databases
 	1)Aurora             2/2/2021
 	2)Dynamodb 2/2/2021
+	
 	3)Redshift  2/2/2021
 	4)Elasticcache 2/2/2021
 	5)Cognito 2/2/2021
 	6)cloudwatch  2/2/2021
-	7)cloudformation 2/2/2021
+	7)cloudformation 2/2/2021  - started 
 	
 1)what is databricks used for? 1/1/2021 - DONE
 A)DONE

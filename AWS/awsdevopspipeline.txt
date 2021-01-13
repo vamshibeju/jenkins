@@ -1,0 +1,12 @@
+1)code commit 
+2)code build < buildspec.yml
+3)code deploy < appsec.yml
+4)code pipeline
+
+
+
+cloud9 - IDE -(visualstudio)
+cloud9 supports python,java etc languages
+
+codestar help in deploying the code 
+aws x-ray analyse the application and troubleshoots the root cause when application fails.

@@ -1,0 +1,75 @@
+Host os is shared by all the containers 
+application is decoupled from the os 
+startup takes a few ms 
+packing is not bulky 
+
+container has os which has only boot and Filesystem which is hardly 40 MB 
+
+what is baremetal?
+Baremetal is a software which is used to run the operating system without hypervisors.
+what is daemon process?
+Daemon is a process which is ever running process.
+what are namespaces?
+It is a seperate space or seperate logical component for a container.
+Docker uses a technology called namespaces to 
+provide the isolated workspace called the container.  
+These namespaces provide a layer of isolation.
+Docker engine uses pid,net,ipc and mnt,uts namespaces.
+What are Cgroups?
+Cgroups limits an application to a specific set of resources.
+Importatnt topics for docker?
+1)container
+2)images
+3)network 
+4)volumes 
+
+docker cli >> restapi >> dockerd(docker daemon)
+
+Docker is a client server architecture
+docker client recieves the command and passes to the docker daemon
+It has different parts like below -
+1)dockerd - any command executed will be done here 
+1)containerd- It manages the lifecycles of the container - It starts the runc process
+2)runc(starts a container and exits) - communicates with the linux process and allocates a process 
+for a container
+3)containerd-shim(watcher)- It monitors the container and whenever container dies it notifies 
+the runc that container is died 
+It will be alive till the container is live.
+
+Lifecycle of containers 
+1)create
+2)created
+3)start
+4)running 
+5)stop 
+6)stopped
+
+Pause vs stop
+Pause does not kill the process of a container and data will be available 
+we can unpause the container again 
+whereas stop can kill the process .
+
+=>If we exit the primary process of a contianer then the container will be killed
+The process which we started is called primary process and if we killed the primary process 
+then the container will  die.
+
+Docker images 
+-------------
+A docker image is made up of multiple layers or Dockerfile.
+Docker image is immutable.
+
+Docker registry 
+---------------
+Registry is a stateless,highly scalable server-side application that stores and lets you 
+distribute images 
+
+Docker hub 
+-----------
+It is registry where we can push the images and pull the images and it is a public repo 
+
+Docker Networking
+------------------
+1)Bridge (default network)
+2)Host 
+3)None
+=>containers can communicate only when they are on the same network

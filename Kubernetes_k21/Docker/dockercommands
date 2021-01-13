@@ -1,0 +1,39 @@
+docker -version 
+docker info 
+docker log path: /var/lib/docker
+docker daemon setting: /etc/docker
+-it - interactive terminal 
+-dt - detached terminal 
+docker ps - lists the containers running 
+docker ps -a - lists the containers which are running and exited 
+
+To connect to a running container 
+docker attach - If a contianer is started in detached mode then we should not use this 
+				If a contianer is started in interactive mode then we should  use this
+docker exec - 
+
+
+docker exec vs attach 
+docker exec executes a new command / create a new process in the container’s environment, 
+while docker attach just connects the standard input/output/error of the main process(with PID 1) 
+inside the container to corresponding standard input/output/error of current terminal(the terminal
+ you are using to run the command).
+
+ctrl pq - This command is used to quit the terminal in the conatainer but not kill the terminal 
+
+docker pull - pulls the image 
+docker rmi imagename - to remove the image name 
+
+docker images --no-trunc - to get the full id of a image of 40 characters
+
+docker commit containerid nameoftheimage - to create a image from the container 
+
+docker export container > xxx.tar - to export the container to the tar file 
+
+docker import imagename < xxx.tar - import the image from tar file to the imagename 
+
+docker tag imagename newimagenanme - to create a tag for the old image 
+
+docker save -o mynginx1.tar nginx - to save the tar file then we need to use 
+
+docker load < mynginx1.tar

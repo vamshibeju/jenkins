@@ -1,0 +1,14 @@
+Data is stored in tables 
+There are 2 keys partition key and sort key which are used to filter the data based on this.
+primary key also called as partition key.
+
+=>To fetch the data fastly from the dynamodb we add indexes other than primary keys 
+
+=>A secondary index is a data structure that contains a subset of attributes from a table, along with an alternate key to support Query operations
+=>You can retrieve data from the index using a Query, in much the same way as you 
+use Query with a table. A table can have multiple secondary indexes,
+ which give your applications access to many different query patterns.
+
+=>Dynamodb supports 2 types of secondary indexes 
+1)Global secondary index 
+2)Local secondary index
