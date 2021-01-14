@@ -2,3 +2,18 @@ cloud former - To create the complete infra into a template we need to go to clo
 1)Ec2 instance will be launched 
 2) After the ec2 instance url we need to enter the resources we need to create in the template
 3) At last we will get a json file which contains all the resources in that file.
+
+
+
+IAM
+----
+To access another aws account we need to use the concept switch role 
+
+Example: A and B are 2 accounts 
+
+If we want B account user to access A account then the below steps need to be done
+
+1)In A account we need to add the account number of B in role and add the services policy 
+2)In B account we need to create a policy with Assumerole and add the arn which we get from the A account 
+3)Policy which we created from the above need to be added to the  user of B account.
+4)Login with the B account user and click switchrole and add the account number of A and the role which we created in A in the first step.
