@@ -1,0 +1,24 @@
+Aws- Inspector
+==============
+It is an automates security assessment service that helps to improve the security and
+compliance of applications deployed on AWS.
+
+For this we need to install inspector agent in aws instance(server).
+
+amazon macie -explore
+
+
+AWS- Cognito
+============
+Amazon Cognito lets you add user sign-up, sign-in, and 
+access control to your web and mobile apps quickly and easily. 
+=>It is used to handle authentication.
+
+AWS- Secretes Manager
+=====================
+It is used to store the credentials of database.So that we cannot expose 
+the database password.
+
+AWS- GuardDuty 
+==============
+It is used to check the logs of s3,cloudwatch and it generates the reports.

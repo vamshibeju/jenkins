@@ -37,3 +37,61 @@ docker tag imagename newimagenanme - to create a tag for the old image
 docker save -o mynginx1.tar nginx - to save the tar file then we need to use 
 
 docker load < mynginx1.tar
+networking 
+-----------
+docker network ls
+
+docker network create nameofbridge -- to create a newtwork 
+
+brctl show - to show the bridges 
+
+ip a - to display the ip addresses 
+
+docker run --network brdigename - to attach a network when running a container 
+
+docker network connect networkname conatainerid - to connect network to a container 
+
+docker network prune - to remove unused networks 
+
+docker commit containerid imagename - to create a image from the docker container 
+
+docker tag source_name:tag target_name:tag
+bind mount 
+----------
+docker run -d \
+  -it \
+  --name devtest \
+  --mount type=bind,source="$(pwd)"/target,target=/app \
+  nginx:latest
+  
+tmpfs mount 
+-----------
+docker volume create volumename 
+
+docker volume create --driver local --opt type=tmpfs --opt device=tmpfs --opt o=size=100m tmpfs-name
+
+
+volumes 
+---------
+docker run -d --name containername --mount source= ,target=  image
+
+if we give -v when volume is not present it will create 
+
+docker volume create volume1
+    docker volume ls
+    docker inpsect
+    docker inpsect volume1
+    docker inspect volume1
+    docker run -it -v volume1:/data --name busybox_container busybox:latest
+    clear
+    ls
+    cd /var/lib/docker
+    ls
+    cd volumes/
+    ls
+    cd volume1/
+    ls
+    cd _data/
+    ls
+    cat a.txt
+    history

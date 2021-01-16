@@ -69,7 +69,33 @@ It is registry where we can push the images and pull the images and it is a publ
 
 Docker Networking
 ------------------
-1)Bridge (default network)
-2)Host 
-3)None
-=>containers can communicate only when they are on the same network
+1)Bridge (default network) - docker0
+2)Host - container behaves like a host and container has hosts ip 
+3)None - It disables all the networking 
+4)macvlan network - it will be used when we directly connected to physical network (used for legacy apps)
+
+subnet gateway - 172.0.0.1
+conatiners start from the ip - 172.0.0.2 and so on 
+
+containers can communicate only when they are on the same network
+
+Limitations 
+------------
+Intercommunication is not possible in docker 
+
+utilities packages in linux 
+---------------------------
+bridge-utils 
+iputils 
+
+mounting 
+----------
+ 1)bind mount 
+ 2)tmpfs 
+ 3)
+ 
+ 
+Docker DNS 
+============
+we can create a daemon.json file in /etc/docker 
+and add the dns server properties 
