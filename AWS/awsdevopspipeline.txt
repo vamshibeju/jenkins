@@ -10,3 +10,17 @@ cloud9 supports python,java etc languages
 
 codestar help in deploying the code 
 aws x-ray analyse the application and troubleshoots the root cause when application fails.
+
+1)explore on aws cli vs sdk?
+
+To config git credentials with profile 
+git config --global credential.helper '!aws codecommit credential-helper $@'
+git config --global credential.UseHttpPath true
+git config --global credential.helper '!aws --profile CodeCommitProfile codecommit credential-helper $@'    
+
+go to .aws and add the profilename
+CodeCommitProfile - this is the profile name
+
+
+
+awsvideo 1:22:00

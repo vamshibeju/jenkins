@@ -1,0 +1,8 @@
+3 way merge vs 2 way merge 
+
+whenever a commit has happened it compares the 2 files and will merge it but when 3 way merge happened 
+it compares the 2 files that need to be commited and also checks with source file 
+
+squash and merge 
+----------------
+In this all the single commits are combined to a single commit and that commit will be pushed 

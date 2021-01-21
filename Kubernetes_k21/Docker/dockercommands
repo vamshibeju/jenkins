@@ -37,6 +37,7 @@ docker tag imagename newimagenanme - to create a tag for the old image
 docker save -o mynginx1.tar nginx - to save the tar file then we need to use 
 
 docker load < mynginx1.tar
+
 networking 
 -----------
 docker network ls

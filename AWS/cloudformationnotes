@@ -1,0 +1,144 @@
+Cloudformation-notes
+===================
+whenever a replacement for the existing resource is done from the CFT
+ the older resources will be deleted.
+ 
+ parameters
+ ----------
+ parameters are used in cloudformation whenever there will be change in the template in future 
+ ->if we dont want to upload the CFT again then we can use the parameters in CFT.
+ 
+ usage: aws cloudformation parameters
+ 
+ !Ref -- to call the instancetype (its like a variable)
+ example  - !Ref instancetype
+ 
+ resources
+ ----------
+ DependsOn
+ DeletionPolicy
+ CreationPolicy 
+ Metadata 
+ 
+ mappings 
+ ----------
+ ex: 
+	RegionMap:
+		us-east-1:
+			"32": "ami-1"
+			"64": "ami-2"
+		us-west-1:
+			"32":"ami-1"
+			"64":"ami-2"
+			
+!FindInMap [mapname,toplevelkey,secondlevelkey]
+mapname - regionMap 
+toplevelkey - us-east-1
+secondlevelkey - 32
+
+pseudo parameters
+==================
+AWS::AccountId - account number 
+AWS::NotificationARNs - sns topic name
+AWS::NoValue  - does not return value 
+AWS::Region  - it gives the region which we are there 
+AWS::StackId - arn of the stack 
+AWS:StackName - name of the stack
+
+outputs
+--------
+To collabarate with other stacks or provide outputs to other stacks 
+
+ImportValue
+-----------
+To get the value of other stack then we need to put 
+Export:
+      Name: SSHSecurityGroup
+	  in the outputs of the stack 
+	  
+taking ouput of other stack as input to the current stack with the importvalue 
+
+we can use !ImportValue to import the value of other stack 
+- !ImportValue SSHSecurityGroup
+
+Conditions
+----------
+ Conditions:
+	Logical ID:
+		function
+		
+
+Conditions:
+  CreateProdResources: !Equals [ !Ref EnvType, prod ]
+  
+ AvailabilityZone:
+        !GetAtt EC2Instance.AvailabilityZone
+		
+Fn::And
+
+Fn::Equals
+
+Fn::If
+
+Fn::Not
+
+Fn::Or
+
+CFN -init 
+===========
+config containes packages,groups,users,sources,files,commands,services 
+with Fn::Base64 we can run userdata scripts in the ec2- instances 
+
+
+sources: 
+	"path": "url or path"
+
+files:
+	/tmp/setup.mysql:
+	content: !Sub |
+
+!Sub |- this is used to substitute the function .
+ usage : !Sub String
+
+commands:
+	test:
+		command:
+		env:
+			
+Services:
+	
+	
+=>logs for ec2-user data are in /var/log/cloud-init-output.log 
+and logs for cfn-init are in /var/log/cfn-init.log
+
+cloudformation drift
+---------------------
+whenever a resource is modified after creating from the stack we will be notified with drift.
+It will be enabled from the ui console 
+drift status 
+last checked drift
+
+Nested Stacks
+---------------
+one stack used in other stacks are called nested stacks 
+ex:security group stack can be used in other stack 
+usage: Type: AWS::CloudFormation::Stack
+
+  SSHSecurityGroupStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.amazonaws.com/cloudformation-bucket-common-mycorp/ssh-security-group.yaml
+      Parameters:
+        ApplicationName: !Ref AWS::StackName
+        VPCId: !Ref VPCId
+      TimeoutInMinutes: 5
+	  
+troposphere
+----------
+This is a python module used to create the CFT in python and then we need to convert to json or yaml
+then we need to upload to the AWS.
+
+DeletionPolicy
+--------------
+delete - deleting the resources from the aws 
+retain - will take backup before deleting

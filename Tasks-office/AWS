@@ -20,17 +20,7 @@
 	
 	
 	
-=>Jenkins CI/CD setup by using aritfactory and sonarqube with maven  - 1/1/2021
-	JENKINS SETUP -- DONE 
-	ARTIFACTORY SETUP -- DONE 
-	sonarqube setup -- pending 
-	git - jenkins - sonarqube - artifactory - pending
-	git - jenkins  - artifactory - DONE 
-	
-	sonarqube integration with jenkins - pending
 
-	=>create a jenkinsfile with the above setup  - DONE (80%)
-	
 Explore the below services in aws 
 
 	Databases
