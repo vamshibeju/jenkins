@@ -4,7 +4,7 @@ stages{
 stage('teststage'){
   steps{
 script{
-echo "this is used for testing"
+error "this is used for testing"
 }
   }
 }
