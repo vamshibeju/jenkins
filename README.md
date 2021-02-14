@@ -1,5 +1,5 @@
 
 pipeline job 
 =======
-pipeline-test- jenkins job
+pipeline-test- jenkins jobs
 
