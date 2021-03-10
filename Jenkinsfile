@@ -13,6 +13,8 @@ stage('secondstage'){
 script{
   echo "${env.BRANCH_NAME}"
 echo "this is second for testing"
+  echo "${WORKSPACE}"
+  cleanWs()
 }
   }
 }
