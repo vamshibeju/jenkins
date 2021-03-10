@@ -9,13 +9,9 @@ echo  "this is used for testing"
   }
 }
 stage('secondstage'){
-  when {
-    expression {
-        (env.BRANCH_NAME).startswith("develop")
-    }
-  }
   steps{
 script{
+  echo "${env.BRANCH_NAME}"
 echo "this is second for testing"
 }
   }
