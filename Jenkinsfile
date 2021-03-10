@@ -7,6 +7,7 @@ script{
 echo  "this is used for testing"
 }
   }
+}
 stage('secondstage'){
   when {
     branch 'develop'
